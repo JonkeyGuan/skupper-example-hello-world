@@ -110,11 +110,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--host", default="0.0.0.0")
     parser.add_argument("--port", type=int, default=8080)
-    parser.add_argument("--backend", metavar="URL", default="http://backend:8080")
+    # parser.add_argument("--backend", metavar="URL", default="http://backend:8080")
+    host = os.environ.get("BACKEND_SERVICE_HOST_", "0.0.0.0")
+    port = int(os.environ.get("BACKEND_SERVICE_PORT_", 8080))
 
     args = parser.parse_args()
 
     global backend_url
-    backend_url = args.backend
+    backend_url = "http://" + host + ":" + str(port)
 
     uvicorn.run(star, host=args.host, port=args.port)
