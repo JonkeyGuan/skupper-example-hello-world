@@ -1,5 +1,7 @@
 # Skupper Hello World
 
+#### A minimal HTTP application deployed across Kubernetes clusters using Skupper
+
 ## Overview
 
 This example is a very simple multi-service HTTP application deployed across Kubernetes clusters using Skupper.
