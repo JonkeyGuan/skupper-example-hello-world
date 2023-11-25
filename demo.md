@@ -72,7 +72,7 @@ The `skupper init` command installs the Skupper router and service controller in
 _**Console for west:**_
 
 ~~~ shell
-skupper init
+skupper init --enable-console --enable-flow-collector
 ~~~
 
 _**Console for east:**_
@@ -244,7 +244,7 @@ Now we're ready to try it out.  Use `oc get route/frontend` to look up the exter
 _**Console for west:**_
 
 ~~~ shell
-kubectl get service/frontend
+oc get route/frontend
 curl http://<external-ip>/api/health
 ~~~
 
